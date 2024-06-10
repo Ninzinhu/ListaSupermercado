@@ -1,10 +1,10 @@
 package ListaSupermercado;
 
-public class SupermarketArray implements Supermarket{
+public class SupermarketArray implements Supermarket {
 
-   private final String[] itens;
+    private final String[] itens;
 
-   private int lastIndex;
+    private int lastIndex;
 
 
     public SupermarketArray(final int size) {
@@ -14,7 +14,7 @@ public class SupermarketArray implements Supermarket{
 
     @Override
     public void add(String item) {
-        if (lastIndex == itens.length-1){
+        if (lastIndex == itens.length - 1) {
             System.err.println("Lista de supermercado Cheia");
         } else {
             lastIndex++;
@@ -30,7 +30,7 @@ public class SupermarketArray implements Supermarket{
         if (lastIndex < 0) {
             System.out.println("Lista Vazia");
         }
-        for(int i =0; i <= lastIndex; i++){
+        for (int i = 0; i <= lastIndex; i++) {
             System.out.println(i + " - " + itens[i]);
         }
         System.out.println("+++++++++++++++++");
@@ -39,19 +39,19 @@ public class SupermarketArray implements Supermarket{
 
     @Override
     public void delete(int index) {
-        if (index >= 0 && index <= lastIndex){
+        if (index >= 0 && index <= lastIndex) {
             shift(index);
             lastIndex--;
 
 
         } else
             System.err.println("Indice Inválido: " + index);
-        }
-
-    private void shift(int index) {
-        for(int i = index; i < lastIndex; i++){
-            itens[i] = itens[i+1];
     }
 
-}
+    private void shift(int index) {
+        for (int i = index; i < lastIndex; i++) {
+            itens[i] = itens[i + 1];
+        }
+
+    }
 }
